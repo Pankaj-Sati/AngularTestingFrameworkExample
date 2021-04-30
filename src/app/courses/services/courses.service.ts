@@ -20,7 +20,12 @@ export class CoursesService {
     }
 
     findAllCourses(): Observable<Course[]> {
-        return this.http.get('/api/courses')
+
+        return this.http.get('/api/courses',{
+            headers:{
+                asdsa:'Hello'
+            }
+        })
             .pipe(
                 map(res => res['payload'])
             );
